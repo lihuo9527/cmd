@@ -1,33 +1,33 @@
 
 npm install -g cnpm --registry=https://registry.npm.taobao.org     ×°cnpm
 
-cnpm install -g @angular/cli  ´´½¨ng-cliÃüÁî
+cnpm install -g @angular/cli  ï¿½ï¿½ï¿½ï¿½ng-cliï¿½ï¿½ï¿½ï¿½
 
 npm install  
 
-ng new demo3   ´´½¨ÐÂµÄÏîÄ¿
+ng new demo3   ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½Ä¿
 
-ng serve    ÔËÐÐngÏîÄ¿   ·þÎñÆ÷IP  http://localhost:4200/
+ng serve    ï¿½ï¿½ï¿½ï¿½ngï¿½ï¿½Ä¿   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½IP  http://localhost:4200/
 
-ng serve -p 3000   ÐÞ¸Ä·þÎñ¶Ë¿Ú
+ng serve -p 3000   ï¿½Þ¸Ä·ï¿½ï¿½ï¿½Ë¿ï¿½
 
-ng g service ´´½¨µ½Ö¸¶¨µÄÄ¿Â¼/ÐèÒª´´½¨µÄÎÄ¼þ
+ng g service ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Ä¿Â¼/ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
 
-ng g component my-new-component   ´´½¨Ò»¸öÍêÕûµÄcomponent
+ng g component my-new-component   ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½component
 
-ng g directive my-new-directive   ´´½¨Ò»¸öÖ¸Áî
+ng g directive my-new-directive   ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ö¸ï¿½ï¿½
 
-ng g pipe my-new-pipe   ´´½¨Ò»¸ö¹ÜµÀ
+ng g pipe my-new-pipe   ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Üµï¿½
 
-ng g service my-new-service   ´´½¨Ò»¸ö·þÎñ
+ng g service my-new-service   ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-ng g class my-new-class   ´´½¨Ò»¸öclass
+ng g class my-new-class   ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½class
 
-ng g interface my-new-interface  ´´½¨Ò»¸ö½Ó¿Ú
+ng g interface my-new-interface  ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ó¿ï¿½
 
-ng g enum my-new-enum   ´´½¨Ò»¸öÁÐ¾ÙÀà±ð
+ng g enum my-new-enum   ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½
 
-ng build --prod Ä¿Â¼ÖÐ¾Í»á³öÏÖdistÎÄ¼þ¼Ð£¬¿ÉÒÔ¿´µ½ÀïÃæ¾ÍÊÇ´ò°üºóµÄÎÄ¼þ£¬°üº¬Ò»Ð©html¡¢jsµÈÎÄ¼þ£¬ÉÏ´«·þÎñÆ÷¾Í¿ÉÒÔÔËÐÐ´úÂëÁË¡£
+ng build --prod Ä¿Â¼ï¿½Ð¾Í»ï¿½ï¿½ï¿½ï¿½distï¿½Ä¼ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Ð©htmlï¿½ï¿½jsï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½Ë¡ï¿½
 
 
 

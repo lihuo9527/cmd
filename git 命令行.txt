@@ -1,6 +1,5 @@
 >git clone -b feature/i18n_flag_icons https://gitlab.com/ccexchange/ccex-web.git   ��ȡָ����֧
 git clone git@192.168.11.250:/home/git/src.git
-1111
 git log --oneline --name-only -1  �鿴commit���ļ�
 git checkout -b lihuo origin/master
 git branch -a

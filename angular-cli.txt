@@ -3,7 +3,7 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org     װcnpm
 
 cnpm install -g @angular/cli  ����ng-cli����
 
-npm i
+npm install
 
 ng new demo3   �����µ���Ŀ
 

@@ -1,0 +1,127 @@
+安装MySQL 5.7  password：shaB9527-+
+
+要安装MySQL的先前稳定版本MySQL 5.7，请按以下步骤操作：
+
+1.下载并添加存储库
+
+sudo yum localinstall https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+
+2.安装MySQL 5.7包
+
+与其他使用yum的软件包一样安装MySQL：
+
+sudo yum install mysql-community-server
+
+
+在安装过程中，yum可能会提示您导入MySQL GPG密钥。 键入y并按Enter键。
+
+下面的章节对于MySQL 8.0和MySQL 5.7都是相关的
+
+启动MySQL
+
+安装完成后，启用并启动MySQL服务类型：
+
+sudo systemctl enable mysqld
+sudo systemctl start mysqld
+
+我们可以通过键入以下命令来检查MySQL服务状态
+
+sudo systemctl status mysqld
+
+输出示例：
+
+● mysqld.service - MySQL Server
+  Loaded: loaded (/usr/lib/systemd/system/mysqld.service; enabled; vendor preset: disabled)
+  Active: active (running) since 日 2018-05-27 07:52:03 CST; 1min 8s ago
+    Docs: man:mysqld(8)
+          http://dev.mysql.com/doc/refman/en/using-systemd.html
+  Process: 3743 ExecStartPre=/usr/bin/mysqld_pre_systemd (code=exited, status=0/SUCCESS)
+ Main PID: 3835 (mysqld)
+  Status: "SERVER_OPERATING"
+  CGroup: /system.slice/mysqld.service
+          └─3835 /usr/sbin/mysqld
+
+5月 27 07:49:51 localhost.localdomain systemd[1]: Starting MySQL Server...
+5月 27 07:52:03 localhost.localdomain systemd[1]: Started MySQL Server.
+
+
+
+
+MySQL安全
+
+当第一次启动MySQL服务器时，为MySQL根用户生成一个临时密码。 您可以通过运行以下命令找到密码：
+
+sudo grep 'temporary password' /var/log/mysqld.log
+
+输出应该看起来像这样：
+
+2018-05-26T23:50:09.270656Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: xwEPP-Fd2zcf
+
+记下密码xwEPP-Fd2zcf，因为下一个命令会要求您输入临时的root密码。
+
+
+运行mysql_secure_installation命令来提高MySQL安装的安全性：
+
+sudo mysql_secure_installation
+
+
+输出：
+
+Securing the MySQL server deployment.
+
+Enter password for user root:
+
+输入xwEPP-Fd2zcf临时密码后，系统会要求您为root用户设置新密码。 密码必须至少包含8个字符并且至少包含一个大写字母，一个小写字母，一个数字和一个特殊字符。
+
+输出示例：
+
+The existing password for the user account root has expired. Please set a new password.
+
+New password:
+
+Re-enter new password:
+
+该脚本还会要求您删除匿名用户，限制root用户对本地计算机的访问权限并删除测试数据库。 你应该对所有问题回答“y”（是）。
+
+
+从命令行连接到MySQL
+
+要通过终端与MySQL进行交互，我们将使用作为MySQL服务器软件包的依赖项安装的MySQL客户端。
+
+以root用户类型登录到MySQL服务器：
+
+mysql -u root -p
+
+系统将提示您输入在运行mysql_secure_installation脚本时以前设置的root密码。
+
+一旦你输入密码，你将会看到如下所示的mysql shell：
+
+
+
+设置允许远程连接权限
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'192.168.6.115' IDENTIFIED BY 'shaB9527-+';
+
+
+
+退出
+
+exit 或者 quit? 或者 \q 
+
+
+常用命令
+
+
+mysqladmin -u用户名 -p旧密码 password新密码  用来修改用户密码
+show databases; 显示所有数据库，注意后面；
+
+use 数据库名;  使用数据库
+
+select database(); 显示当前连接的数据库
+
+
+select version();  显示当前服务器版本
+
+select now();      显示当前日期
+
+
+select user();     显示当前用户

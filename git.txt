@@ -1,411 +1,426 @@
->git clone -b feature/i18n_flag_icons https://gitlab.com/ccexchange/ccex-web.git   ï¿½ï¿½È¡Ö¸ï¿½ï¿½ï¿½ï¿½Ö§
+git clone -b fix/sell_button_onclick https://gitlab.com/ccexchange/ccex-web.git   »ñÈ¡Ö¸¶¨·ÖÖ§
 git clone git@192.168.11.250:/home/git/src.git
-git log --oneline --name-only -1  ï¿½é¿´commitï¿½ï¿½ï¿½Ä¼ï¿½
+
+commit¹æ·¶
+feat£ºÐÂ¹¦ÄÜ£¨feature£©
+fix£ºÐÞ²¹bug
+docs£ºÎÄµµ£¨documentation£©
+style£º ¸ñÊ½£¨²»Ó°Ïì´úÂëÔËÐÐµÄ±ä¶¯£©
+refactor£ºÖØ¹¹£¨¼´²»ÊÇÐÂÔö¹¦ÄÜ£¬Ò²²»ÊÇÐÞ¸ÄbugµÄ´úÂë±ä¶¯£©
+test£ºÔö¼Ó²âÊÔ
+chore£º¹¹½¨¹ý³Ì»ò¸¨Öú¹¤¾ßµÄ±ä¶¯
+
+git log --oneline --name-only -1  ²é¿´commitµÄÎÄ¼þ
 git checkout -b lihuo origin/master
+git checkout -b dev origin/dev  ÔÚ±¾µØÐÂ½¨Ò»¸öÓëÔ¶³ÌµÄdev°æ±¾ÏàÍ¬(±»ºÏ²¢µÄ°æ±¾)µÄdev·ÖÖ§
 git branch -a
-git fetch origin master    È¡ï¿½Â±ï¿½ï¿½ï¿½Ö§ï¿½Ô¼ï¿½ï¿½ï¿½Ø·ï¿½Ö§ï¿½Ä¸ï¿½ï¿½ï¿½
-git merge origin/master  ï¿½ï¿½Ô¶ï¿½ï¿½masterï¿½ï¿½Ö§ï¿½Ä´ï¿½ï¿½ï¿½mergeï¿½ï¿½ï¿½ï¿½ï¿½Ø·ï¿½Ö§
-git remote rm origin   É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½Ì²Ö¿ï¿½ 
-git remote add origin url  ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½Ì²Ö¿ï¿½
-git init      ï¿½ï¿½Ê¼ï¿½ï¿½
-git add .     ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½Ä¼ï¿½
-git add ./ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½Òªï¿½á½»ï¿½ï¿½ï¿½Ä¼ï¿½
-git commit -m "ï¿½Ä¼ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½"        ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½×¢ï¿½ï¿½
-git branch newbranch  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È´ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Â·ï¿½Ö§ï¿½á½»ï¿½Ä¶ï¿½
-git branch  ï¿½é¿´ï¿½ï¿½Ç°ï¿½ï¿½Ö§
-git checkout newbranch  ï¿½Ð»ï¿½ï¿½ï¿½Ö§ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½$ git branchÈ·ï¿½ï¿½ï¿½Â¡ï¿½È»ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Ä¸Ä¶ï¿½ï¿½á½»ï¿½ï¿½ï¿½ÂµÄ·ï¿½Ö§ï¿½Ï¡ï¿½
-git remote add origin https://ï¿½Ô¼ï¿½ï¿½Ä²Ö¿ï¿½urlï¿½ï¿½Ö·        ï¿½ï¿½ï¿½Ó²Ö¿ï¿½
-git push -u origin master            ï¿½Ï´ï¿½
-git push -f origin master        Ç¿ï¿½ï¿½ï¿½Ï´ï¿½
-111
+git fetch origin master    È¡ÏÂ±¾·ÖÖ§ÒÔ¼°Ïà¹Ø·ÖÖ§µÄ¸üÐÂ
+git merge origin master  ½«Ô¶¶Ëmaster·ÖÖ§µÄ´úÂëmerge½ø±¾µØ·ÖÖ§
+git remote rm origin   É¾³ýÏÖÓÐÔ¶³Ì²Ö¿â 
+git remote add origin url  Ìí¼ÓÐÂÔ¶³Ì²Ö¿â
+git init      ³õÊ¼»¯
+git add .     Ìí¼ÓÉÏ´«ÎÄ¼þ
+git add ./Õâ¸öºóÃæ¾ÍÊÇÐ´ÄãÏëÒªÌá½»µÄÎÄ¼þ
+git commit -m "ÎÄ¼þ×¢ÊÍÓï¾ä"        Ìí¼ÓÎÄ¼þ×¢ÊÍ
+git branch newbranch  ½ÓÏÂÀ´ÏÈ´´½¨Ò»¸öÐÂ·ÖÖ§Ìá½»¸Ä¶¯
+git branch  ²é¿´µ±Ç°·ÖÖ§
+git checkout newbranch  ÇÐ»»·ÖÖ§ ÕâÑù¾ÍÇÐ»»ÍêÁË£¬¿ÉÒÔ$ git branchÈ·ÈÏÏÂ¡£È»ºóÄãÒª½«ÄãµÄ¸Ä¶¯Ìá½»µ½ÐÂµÄ·ÖÖ§ÉÏ¡£
+git remote add origin https://×Ô¼ºµÄ²Ö¿âurlµØÖ·        Á¬½Ó²Ö¿â
+git push -u origin master            ÉÏ´«
+git push -f origin master        Ç¿ÖÆÉÏ´«
 
-ï¿½ï¿½È¡gitï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-1.ï¿½ï¿½ï¿½Õ¶Ë£ï¿½cdï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½
-cd ï¿½Ä¼ï¿½ï¿½ï¿½
+git reset --soft "HEAD^"    //»Ø¹öµ½ÉÏÒ»¸ö°æ±¾µÄcommitÖ®Ç° ^´ú±íÉÏÒ»¸ö°æ±¾ ^^´ú±íÉÏ2¸ö°æ±¾
+git reset --mixed °æ±¾¿âID  //½ö½öÖ»ÊÇ³·ÏúÒÑÌá½»µÄ°æ±¾¿âºÍÔÝ´æÇø£¬²»»áÐÞ¸Ä¹¤×÷Çø
+git reset --hard °æ±¾¿âID   //³¹µ×½«¹¤×÷Çø¡¢ÔÝ´æÇøºÍ°æ±¾¿â¼ÇÂ¼»Ö¸´µ½Ö¸¶¨µÄ°æ±¾¿â
+git commit --amend        ³·ÏúÉÏÒ»´ÎÌá½»  ²¢½²ÔÝ´æÇøÎÄ¼þÖØÐÂÌá½»
+git checkout -- <file> À­È¡ÔÝ´æÇøÎÄ¼þ ²¢½«ÆäÌæ»»³É¹¤×÷ÇøÎÄ¼þ
+À­È¡gitÏîÄ¿µ½±¾µØ
+1.´ò¿ªÖÕ¶Ë£¬cdµ½×Ô¼ºÏëÒª´æ·ÅÏîÄ¿µÄÎÄ¼þ¼Ð
+cd ÎÄ¼þ¼Ð
 
-2.ï¿½ï¿½ï¿½ï¿½git clone url ï¿½ï¿½urlÎªï¿½ï¿½Òªï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Ö·
+2.ÊäÈëgit clone url £¬urlÎªÄãÒªÀ­È¡µÄÏîÄ¿µØÖ·
 git clone url
 
-ï¿½Þ¸ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ÐÞ¸ÄÉÏ´«µÄÓÃ»§ÃûºÍÃÜÂë
 git config --global user.name "Your Name"
 git config --global user.email you@example.com
 
-È«ï¿½Öµï¿½Í¨ï¿½ï¿½vim ~/.gitconfigï¿½ï¿½ï¿½é¿´
+È«¾ÖµÄÍ¨¹ývim ~/.gitconfigÀ´²é¿´
 git config user.name "Your Name"
 git config user.email you@example.com
 
-ï¿½Ö²ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Ç°Â·ï¿½ï¿½ï¿½Âµï¿½ .git/configï¿½Ä¼ï¿½ï¿½ï¿½ï¿½é¿´
-Ò²ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½ï¿½á½»ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Emailï¿½ï¿½
+¾Ö²¿µÄÍ¨¹ýµ±Ç°Â·¾¶ÏÂµÄ .git/configÎÄ¼þÀ´²é¿´
+Ò²¿ÉÒÔÐÞ¸ÄÌá½»µÄÓÃ»§ÃûºÍEmail£º
 git commit --amend --author='Your Name <you@example.com>'
-git commitï¿½ï¿½ï¿½á½»ï¿½ï¿½Authorï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½git logï¿½é¿´ 
+git commitÒÑÌá½»µÄAuthorÐÅÏ¢¿ÉÒÔÍ¨¹ýgit log²é¿´ 
 git log
-git pull ï¿½ï¿½ï¿½ï¿½ git fetch origin develop   git checkout develop   git merge origin/develop  
+git pull µÈÓÚ git fetch origin develop   git checkout develop   git merge origin/develop  
 
-Ö±ï¿½ï¿½Ö¸ï¿½ï¿½cloneÄ³ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½
-git clone -b  ï¿½ï¿½Ö§ï¿½ï¿½  xxx .gitï¿½ï¿½Ö·
+Ö±½ÓÖ¸¶¨cloneÄ³¸ö·ÖÖ§£º
+git clone -b  ·ÖÖ§Ãû  xxx .gitµØÖ·
 
 
 
-Ò»ï¿½ï¿½ï¿½Â½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+Ò»¡¢ÐÂ½¨´úÂë¿â
 
-  # ï¿½Úµï¿½Ç°Ä¿Â¼ï¿½Â½ï¿½Ò»ï¿½ï¿½Gitï¿½ï¿½ï¿½ï¿½ï¿½
+  # ÔÚµ±Ç°Ä¿Â¼ÐÂ½¨Ò»¸öGit´úÂë¿â
 
   $ git init
 
-  # ï¿½Â½ï¿½Ò»ï¿½ï¿½Ä¿Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ÎªGitï¿½ï¿½ï¿½ï¿½ï¿½
+  # ÐÂ½¨Ò»¸öÄ¿Â¼£¬½«Æä³õÊ¼»¯ÎªGit´úÂë¿â
 
   $ git init[project-name]
 
-  # ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê·
+  # ÏÂÔØÒ»¸öÏîÄ¿ºÍËüµÄÕû¸ö´úÂëÀúÊ·
 
   $ git clone [url]
 
-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+¶þ¡¢ÅäÖÃ
 
-Gitï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½Îª.gitconfigï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Ä¿Â¼ï¿½Â£ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Ä¿
+GitµÄÉèÖÃÎÄ¼þÎª.gitconfig£¬Ëü¿ÉÒÔÔÚÓÃ»§Ö÷Ä¿Â¼ÏÂ£¨È«¾ÖÅäÖÃ£©£¬Ò²¿ÉÒÔÔÚÏîÄ¿Ä¿
 
-Â¼ï¿½Â£ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½
+Â¼ÏÂ£¨ÏîÄ¿ÅäÖÃ£©¡£
 
-  # ï¿½ï¿½Ê¾ï¿½ï¿½Ç°ï¿½ï¿½Gitï¿½ï¿½ï¿½ï¿½
+  # ÏÔÊ¾µ±Ç°µÄGitÅäÖÃ
 
   $ git config--list
 
-  # ï¿½à¼­Gitï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
+  # ±à¼­GitÅäÖÃÎÄ¼þ
 
   $ git config -e[--global]
 
-  # ï¿½ï¿½ï¿½ï¿½ï¿½á½»ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Ï¢
+  # ÉèÖÃÌá½»´úÂëÊ±µÄÓÃ»§ÐÅÏ¢
 
   $ git config[--global] user.name "[name]"
 
   $ git config[--global] user.email "[email address]"
 
-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/É¾ï¿½ï¿½ï¿½Ä¼ï¿½
+Èý¡¢Ôö¼Ó/É¾³ýÎÄ¼þ
 
-  # ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
+  # Ìí¼ÓÖ¸¶¨ÎÄ¼þµ½ÔÝ´æÇø
 
   $ git add [file1][file2] ...
 
-  # ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½Ä¿Â¼ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Â¼
+  # Ìí¼ÓÖ¸¶¨Ä¿Â¼µ½ÔÝ´æÇø£¬°üÀ¨×ÓÄ¿Â¼
 
   $ git add [dir]
 
-  # ï¿½ï¿½Óµï¿½Ç°Ä¿Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
+  # Ìí¼Óµ±Ç°Ä¿Â¼µÄËùÓÐÎÄ¼þµ½ÔÝ´æÇø
 
   $ git add .
 
-  # ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ä»¯Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½È·ï¿½ï¿½
+  # Ìí¼ÓÃ¿¸ö±ä»¯Ç°£¬¶¼»áÒªÇóÈ·ÈÏ
 
-  # ï¿½ï¿½ï¿½ï¿½Í¬Ò»ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ä¶à´¦ï¿½ä»¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½Ö·Ö´ï¿½ï¿½á½»
+  # ¶ÔÓÚÍ¬Ò»¸öÎÄ¼þµÄ¶à´¦±ä»¯£¬¿ÉÒÔÊµÏÖ·Ö´ÎÌá½»
 
   $ git add -p
 
-  # É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
+  # É¾³ý¹¤×÷ÇøÎÄ¼þ£¬²¢ÇÒ½«Õâ´ÎÉ¾³ý·ÅÈëÔÝ´æÇø
 
   $ git rm [file1][file2] ...
 
-  # Í£Ö¹×·ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½á±£ï¿½ï¿½ï¿½Ú¹ï¿½ï¿½ï¿½ï¿½ï¿½
+  # Í£Ö¹×·×ÙÖ¸¶¨ÎÄ¼þ£¬µ«¸ÃÎÄ¼þ»á±£ÁôÔÚ¹¤×÷Çø
 
   $ git rm --cached[file]
 
-  # ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
+  # ¸ÄÃûÎÄ¼þ£¬²¢ÇÒ½«Õâ¸ö¸ÄÃû·ÅÈëÔÝ´æÇø
 
   $ git mv[file-original] [file-renamed]
 
  
 
-ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á½»
+ËÄ¡¢´úÂëÌá½»
 
-  # ï¿½á½»ï¿½Ý´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¿ï¿½ï¿½ï¿½
+  # Ìá½»ÔÝ´æÇøµ½²Ö¿âÇø
 
   $ git commit -m[message]
 
-  # ï¿½á½»ï¿½Ý´ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ö¿ï¿½ï¿½ï¿½
+  # Ìá½»ÔÝ´æÇøµÄÖ¸¶¨ÎÄ¼þµ½²Ö¿âÇø
 
   $ git commit[file1] [file2] ... -m [message]
 
-  # ï¿½á½»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½commitÖ®ï¿½ï¿½Ä±ä»¯ï¿½ï¿½Ö±ï¿½Óµï¿½ï¿½Ö¿ï¿½ï¿½ï¿½
+  # Ìá½»¹¤×÷Çø×ÔÉÏ´ÎcommitÖ®ºóµÄ±ä»¯£¬Ö±½Óµ½²Ö¿âÇø
 
   $ git commit -a
 
-  # ï¿½á½»Ê±ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½diffï¿½ï¿½Ï¢
+  # Ìá½»Ê±ÏÔÊ¾ËùÓÐdiffÐÅÏ¢
 
   $ git commit -v
 
-  # Ê¹ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Âµï¿½commitï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½á½»
+  # Ê¹ÓÃÒ»´ÎÐÂµÄcommit£¬Ìæ´úÉÏÒ»´ÎÌá½»
 
-  # ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Îºï¿½ï¿½Â±ä»¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½Ò»ï¿½ï¿½commitï¿½ï¿½ï¿½á½»ï¿½ï¿½Ï¢
+  # Èç¹û´úÂëÃ»ÓÐÈÎºÎÐÂ±ä»¯£¬ÔòÓÃÀ´¸ÄÐ´ÉÏÒ»´ÎcommitµÄÌá½»ÐÅÏ¢
 
-  $ git commit--amend -m [message]
+  $ git commit --amend -m [message]
 
-  # ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½commitï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Â±ä»¯
+  # ÖØ×öÉÏÒ»´Îcommit£¬²¢°üÀ¨Ö¸¶¨ÎÄ¼þµÄÐÂ±ä»¯
 
-  $ git commit--amend [file1] [file2] ...
+  $ git commit --amend [file1] [file2] ...
 
-ï¿½å¡¢ï¿½ï¿½Ö§
+Îå¡¢·ÖÖ§
 
-  # ï¿½Ð³ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½Ø·ï¿½Ö§
+  # ÁÐ³öËùÓÐ±¾µØ·ÖÖ§
 
   $ git branch
 
-  # ï¿½Ð³ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½Ì·ï¿½Ö§
+  # ÁÐ³öËùÓÐÔ¶³Ì·ÖÖ§
 
   $ git branch -r
 
-  # ï¿½Ð³ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½Ø·ï¿½Ö§ï¿½ï¿½Ô¶ï¿½Ì·ï¿½Ö§
+  # ÁÐ³öËùÓÐ±¾µØ·ÖÖ§ºÍÔ¶³Ì·ÖÖ§
 
   $ git branch -a
 
-  # ï¿½Â½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È»Í£ï¿½ï¿½ï¿½Úµï¿½Ç°ï¿½ï¿½Ö§
+  # ÐÂ½¨Ò»¸ö·ÖÖ§£¬µ«ÒÀÈ»Í£ÁôÔÚµ±Ç°·ÖÖ§
 
-  $ git branch[branch-name]
+  $ git branch [branch-name]
 
-  # ï¿½Â½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½ï¿½Ã·ï¿½Ö§
+  # ÐÂ½¨Ò»¸ö·ÖÖ§£¬²¢ÇÐ»»µ½¸Ã·ÖÖ§
 
-  $ git checkout -b[branch]
+  $ git checkout -b [branch]
 
-  # ï¿½Â½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½Ö¸ï¿½ï¿½Ö¸ï¿½ï¿½commit
+  # ÐÂ½¨Ò»¸ö·ÖÖ§£¬Ö¸ÏòÖ¸¶¨commit
 
-  $ git branch[branch] [commit]
+  $ git branch [branch] [commit]
 
-  # ï¿½Â½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½Ì·ï¿½Ö§ï¿½ï¿½ï¿½ï¿½×·ï¿½Ù¹ï¿½Ïµ
+  # ÐÂ½¨Ò»¸ö·ÖÖ§£¬ÓëÖ¸¶¨µÄÔ¶³Ì·ÖÖ§½¨Á¢×·×Ù¹ØÏµ
 
   $ git branch--track [branch] [remote-branch]
 
-  # ï¿½Ð»ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¹ï¿½ï¿½ï¿½ï¿½ï¿½
+  # ÇÐ»»µ½Ö¸¶¨·ÖÖ§£¬²¢¸üÐÂ¹¤×÷Çø
 
-  $ git checkout[branch-name]
+  $ git checkout [branch-name]
 
-  # ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ö§
+  # ÇÐ»»µ½ÉÏÒ»¸ö·ÖÖ§
 
   $ git checkout -
 
-  # ï¿½ï¿½ï¿½ï¿½×·ï¿½Ù¹ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð·ï¿½Ö§ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½Ì·ï¿½Ö§Ö®ï¿½ï¿½
+  # ½¨Á¢×·×Ù¹ØÏµ£¬ÔÚÏÖÓÐ·ÖÖ§ÓëÖ¸¶¨µÄÔ¶³Ì·ÖÖ§Ö®¼ä
 
-  $ git branch--set-upstream [branch] [remote-branch]
+  $ git branch --set-upstream [branch] [remote-branch]
 
-  # ï¿½Ï²ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½Ö§
+  # ºÏ²¢Ö¸¶¨·ÖÖ§µ½µ±Ç°·ÖÖ§
 
-  $ git merge[branch]
+  $ git merge [branch]
 
-  # Ñ¡ï¿½ï¿½Ò»ï¿½ï¿½commitï¿½ï¿½ï¿½Ï²ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½Ö§
+  # Ñ¡ÔñÒ»¸öcommit£¬ºÏ²¢½øµ±Ç°·ÖÖ§
 
   $ git cherry-pick[commit]
 
-  # É¾ï¿½ï¿½ï¿½ï¿½Ö§
+  # É¾³ý·ÖÖ§
 
-  $ git branch -d[branch-name]
+  $ git branch -D [branch-name]
 
-  # É¾ï¿½ï¿½Ô¶ï¿½Ì·ï¿½Ö§
+  # É¾³ýÔ¶³Ì·ÖÖ§
 
-  $ git push origin--delete [branch-name]
+  $ git push origin --delete [branch-name]
 
   $ git branch -dr[remote/branch]
 
-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç©
+Áù¡¢±êÇ©
 
-  # ï¿½Ð³ï¿½ï¿½ï¿½ï¿½ï¿½tag
+  # ÁÐ³öËùÓÐtag
 
   $ git tag
 
-  # ï¿½Â½ï¿½Ò»ï¿½ï¿½tagï¿½Úµï¿½Ç°commit
+  # ÐÂ½¨Ò»¸ötagÔÚµ±Ç°commit
 
   $ git tag [tag]
 
-  # ï¿½Â½ï¿½Ò»ï¿½ï¿½tagï¿½ï¿½Ö¸ï¿½ï¿½commit
+  # ÐÂ½¨Ò»¸ötagÔÚÖ¸¶¨commit
 
   $ git tag [tag][commit]
 
-  # É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½tag
+  # É¾³ý±¾µØtag
 
   $ git tag -d[tag]
 
-  # É¾ï¿½ï¿½Ô¶ï¿½ï¿½tag
+  # É¾³ýÔ¶³Ìtag
 
   $ git push origin:refs/tags/[tagName]
 
-  # ï¿½é¿´tagï¿½ï¿½Ï¢
+  # ²é¿´tagÐÅÏ¢
 
   $ git show [tag]
 
-  # ï¿½á½»Ö¸ï¿½ï¿½tag
+  # Ìá½»Ö¸¶¨tag
 
   $ git push[remote] [tag]
 
-  # ï¿½á½»ï¿½ï¿½ï¿½ï¿½tag
+  # Ìá½»ËùÓÐtag
 
   $ git push[remote] --tags
 
-  # ï¿½Â½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½Ö¸ï¿½ï¿½Ä³ï¿½ï¿½tag
+  # ÐÂ½¨Ò»¸ö·ÖÖ§£¬Ö¸ÏòÄ³¸ötag
 
   $ git checkout -b[branch] [tag]
 
-ï¿½ß¡ï¿½ï¿½é¿´ï¿½ï¿½Ï¢
+Æß¡¢²é¿´ÐÅÏ¢
 
-  # ï¿½ï¿½Ê¾ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
+  # ÏÔÊ¾ÓÐ±ä¸üµÄÎÄ¼þ
 
   $ git status
 
-  # ï¿½ï¿½Ê¾ï¿½ï¿½Ç°ï¿½ï¿½Ö§ï¿½Ä°æ±¾ï¿½ï¿½Ê·
+  # ÏÔÊ¾µ±Ç°·ÖÖ§µÄ°æ±¾ÀúÊ·
 
   $ git log
 
-  # ï¿½ï¿½Ê¾commitï¿½ï¿½Ê·ï¿½ï¿½ï¿½Ô¼ï¿½Ã¿ï¿½ï¿½commitï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
+  # ÏÔÊ¾commitÀúÊ·£¬ÒÔ¼°Ã¿´Îcommit·¢Éú±ä¸üµÄÎÄ¼þ
 
   $ git log --stat
 
-  # ï¿½ï¿½ï¿½ï¿½ï¿½á½»ï¿½ï¿½Ê·ï¿½ï¿½ï¿½ï¿½ï¿½Ý¹Ø¼ï¿½ï¿½ï¿½
+  # ËÑË÷Ìá½»ÀúÊ·£¬¸ù¾Ý¹Ø¼ü´Ê
 
   $ git log -S[keyword]
 
-  # ï¿½ï¿½Ê¾Ä³ï¿½ï¿½commitÖ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ä¶¯ï¿½ï¿½Ã¿ï¿½ï¿½commitÕ¼ï¿½ï¿½Ò»ï¿½ï¿½
+  # ÏÔÊ¾Ä³¸öcommitÖ®ºóµÄËùÓÐ±ä¶¯£¬Ã¿¸öcommitÕ¼¾ÝÒ»ÐÐ
 
   $ git log [tag]HEAD --pretty=format:%s
 
-  # ï¿½ï¿½Ê¾Ä³ï¿½ï¿½commitÖ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ä¶¯ï¿½ï¿½ï¿½ï¿½"ï¿½á½»Ëµï¿½ï¿½"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  # ÏÔÊ¾Ä³¸öcommitÖ®ºóµÄËùÓÐ±ä¶¯£¬Æä"Ìá½»ËµÃ÷"±ØÐë·ûºÏËÑË÷Ìõ¼þ
 
   $ git log [tag]HEAD --grep feature
 
-  # ï¿½ï¿½Ê¾Ä³ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ä°æ±¾ï¿½ï¿½Ê·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
+  # ÏÔÊ¾Ä³¸öÎÄ¼þµÄ°æ±¾ÀúÊ·£¬°üÀ¨ÎÄ¼þ¸ÄÃû
 
   $ git log --follow[file]
 
   $ git whatchanged[file]
 
-  # ï¿½ï¿½Ê¾Ö¸ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Øµï¿½Ã¿Ò»ï¿½ï¿½diff
+  # ÏÔÊ¾Ö¸¶¨ÎÄ¼þÏà¹ØµÄÃ¿Ò»´Îdiff
 
   $ git log -p[file]
 
-  # ï¿½ï¿½Ê¾ï¿½ï¿½È¥5ï¿½ï¿½ï¿½á½»
+  # ÏÔÊ¾¹ýÈ¥5´ÎÌá½»
 
   $ git log -5--pretty --oneline
 
-  # ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½á½»ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á½»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  # ÏÔÊ¾ËùÓÐÌá½»¹ýµÄÓÃ»§£¬°´Ìá½»´ÎÊýÅÅÐò
 
   $ git shortlog-sn
 
-  # ï¿½ï¿½Ê¾Ö¸ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ê²Ã´ï¿½ï¿½ï¿½ï¿½Ê²Ã´Ê±ï¿½ï¿½ï¿½Þ¸Ä¹ï¿½
+  # ÏÔÊ¾Ö¸¶¨ÎÄ¼þÊÇÊ²Ã´ÈËÔÚÊ²Ã´Ê±¼äÐÞ¸Ä¹ý
 
   $ git blame[file]
 
-  # ï¿½ï¿½Ê¾ï¿½Ý´ï¿½ï¿½ï¿½ï¿½Í¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½
+  # ÏÔÊ¾ÔÝ´æÇøºÍ¹¤×÷ÇøµÄ²îÒì
 
   $ git diff
 
-  # ï¿½ï¿½Ê¾ï¿½Ý´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½commitï¿½Ä²ï¿½ï¿½ï¿½
+  # ÏÔÊ¾ÔÝ´æÇøºÍÉÏÒ»¸öcommitµÄ²îÒì
 
   $ git diff--cached [file]
 
-  # ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ëµ±Ç°ï¿½ï¿½Ö§ï¿½ï¿½ï¿½ï¿½commitÖ®ï¿½ï¿½Ä²ï¿½ï¿½ï¿½
+  # ÏÔÊ¾¹¤×÷ÇøÓëµ±Ç°·ÖÖ§×îÐÂcommitÖ®¼äµÄ²îÒì
 
   $ git diff HEAD
 
-  # ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½á½»Ö®ï¿½ï¿½Ä²ï¿½ï¿½ï¿½
+  # ÏÔÊ¾Á½´ÎÌá½»Ö®¼äµÄ²îÒì
 
   $ git diff[first-branch]...[second-branch]
 
-  # ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½Ë¶ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½
+  # ÏÔÊ¾½ñÌìÄãÐ´ÁË¶àÉÙÐÐ´úÂë
 
   $ git diff--shortstat "@{0 day ago}"
 
-  # ï¿½ï¿½Ê¾Ä³ï¿½ï¿½ï¿½á½»ï¿½ï¿½Ôªï¿½ï¿½ï¿½Ýºï¿½ï¿½ï¿½ï¿½Ý±ä»¯
+  # ÏÔÊ¾Ä³´ÎÌá½»µÄÔªÊý¾ÝºÍÄÚÈÝ±ä»¯
 
   $ git show[commit]
 
-  # ï¿½ï¿½Ê¾Ä³ï¿½ï¿½ï¿½á½»ï¿½ï¿½ï¿½ï¿½ï¿½ä»¯ï¿½ï¿½ï¿½Ä¼ï¿½
+  # ÏÔÊ¾Ä³´ÎÌá½»·¢Éú±ä»¯µÄÎÄ¼þ
 
   $ git show--name-only [commit]
 
-  # ï¿½ï¿½Ê¾Ä³ï¿½ï¿½ï¿½á½»Ê±ï¿½ï¿½Ä³ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  # ÏÔÊ¾Ä³´ÎÌá½»Ê±£¬Ä³¸öÎÄ¼þµÄÄÚÈÝ
 
   $ git show[commit]:[filename]
 
-  # ï¿½ï¿½Ê¾ï¿½ï¿½Ç°ï¿½ï¿½Ö§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á½»
+  # ÏÔÊ¾µ±Ç°·ÖÖ§µÄ×î½ü¼¸´ÎÌá½»
 
   $ git reflog
 
-ï¿½Ë¡ï¿½Ô¶ï¿½ï¿½Í¬ï¿½ï¿½
+°Ë¡¢Ô¶³ÌÍ¬²½
 
-  # ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½Ì²Ö¿ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ä¶¯
+  # ÏÂÔØÔ¶³Ì²Ö¿âµÄËùÓÐ±ä¶¯
 
   $ git fetch origin master
 
-  # ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½Ì²Ö¿ï¿½
+  # ÏÔÊ¾ËùÓÐÔ¶³Ì²Ö¿â
 
   $ git remote -v
 
-  # ï¿½ï¿½Ê¾Ä³ï¿½ï¿½Ô¶ï¿½Ì²Ö¿ï¿½ï¿½ï¿½ï¿½Ï¢
+  # ÏÔÊ¾Ä³¸öÔ¶³Ì²Ö¿âµÄÐÅÏ¢
 
   $ git remote show[remote]
 
-  # ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Âµï¿½Ô¶ï¿½Ì²Ö¿â£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  # Ôö¼ÓÒ»¸öÐÂµÄÔ¶³Ì²Ö¿â£¬²¢ÃüÃû
 
   $ git remote add [shortname] [url]
 
-  # È¡ï¿½ï¿½Ô¶ï¿½Ì²Ö¿ï¿½Ä±ä»¯ï¿½ï¿½ï¿½ï¿½ï¿½ë±¾ï¿½Ø·ï¿½Ö§ï¿½Ï²ï¿½
+  # È¡»ØÔ¶³Ì²Ö¿âµÄ±ä»¯£¬²¢Óë±¾µØ·ÖÖ§ºÏ²¢
 
   $ git pull[remote] [branch]
 
-  # ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½Ô¶ï¿½Ì²Ö¿ï¿½
+  # ÉÏ´«±¾µØÖ¸¶¨·ÖÖ§µ½Ô¶³Ì²Ö¿â
 
   $ git push[remote] [branch]
 
-  # Ç¿ï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½Ç°ï¿½ï¿½Ö§ï¿½ï¿½Ô¶ï¿½Ì²Ö¿â£¬ï¿½ï¿½Ê¹ï¿½Ð³ï¿½Í»
+  # Ç¿ÐÐÍÆËÍµ±Ç°·ÖÖ§µ½Ô¶³Ì²Ö¿â£¬¼´Ê¹ÓÐ³åÍ»
 
   $ git push[remote] --force
 
-  # ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð·ï¿½Ö§ï¿½ï¿½Ô¶ï¿½Ì²Ö¿ï¿½
+  # ÍÆËÍËùÓÐ·ÖÖ§µ½Ô¶³Ì²Ö¿â
 
   $ git push[remote] --all
 
-ï¿½Å¡ï¿½ï¿½ï¿½ï¿½ï¿½
+¾Å¡¢³·Ïú
 
-  # ï¿½Ö¸ï¿½ï¿½Ý´ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  # »Ö¸´ÔÝ´æÇøµÄÖ¸¶¨ÎÄ¼þµ½¹¤×÷Çø
 
-  $ git checkout[file]
+  $ git checkout [file]
 
-  # ï¿½Ö¸ï¿½Ä³ï¿½ï¿½commitï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½ï¿½Í¹ï¿½ï¿½ï¿½ï¿½ï¿½
+  # »Ö¸´Ä³¸öcommitµÄÖ¸¶¨ÎÄ¼þµ½ÔÝ´æÇøºÍ¹¤×÷Çø
 
-  $ git checkout[commit] [file]
+  $ git checkout [commit] [file]
 
-  # ï¿½Ö¸ï¿½ï¿½Ý´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  # »Ö¸´ÔÝ´æÇøµÄËùÓÐÎÄ¼þµ½¹¤×÷Çø
 
   $ git checkout .
 
-  # ï¿½ï¿½ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½commitï¿½ï¿½ï¿½ï¿½Ò»ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  # ÖØÖÃÔÝ´æÇøµÄÖ¸¶¨ÎÄ¼þ£¬ÓëÉÏÒ»´Îcommit±£³ÖÒ»ÖÂ£¬µ«¹¤×÷Çø²»±ä
 
-  $ git reset[file]
+  $ git reset [file]
 
-  # ï¿½ï¿½ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½ï¿½ë¹¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½commitï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
+  # ÖØÖÃÔÝ´æÇøÓë¹¤×÷Çø£¬ÓëÉÏÒ»´Îcommit±£³ÖÒ»ÖÂ
 
-  $ git reset--hard
+  $ git reset --hard
 
-  # ï¿½ï¿½ï¿½Ãµï¿½Ç°ï¿½ï¿½Ö§ï¿½ï¿½Ö¸ï¿½ï¿½ÎªÖ¸ï¿½ï¿½commitï¿½ï¿½Í¬Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  # ÖØÖÃµ±Ç°·ÖÖ§µÄÖ¸ÕëÎªÖ¸¶¨commit£¬Í¬Ê±ÖØÖÃÔÝ´æÇø£¬µ«¹¤×÷Çø²»±ä
 
-  $ git reset[commit]
+  $ git reset [commit]
 
-  # ï¿½ï¿½ï¿½Ãµï¿½Ç°ï¿½ï¿½Ö§ï¿½ï¿½HEADÎªÖ¸ï¿½ï¿½commitï¿½ï¿½Í¬Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½ï¿½Í¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½commitÒ»ï¿½ï¿½
+  # ÖØÖÃµ±Ç°·ÖÖ§µÄHEADÎªÖ¸¶¨commit£¬Í¬Ê±ÖØÖÃÔÝ´æÇøºÍ¹¤×÷Çø£¬ÓëÖ¸¶¨commitÒ»ÖÂ
 
-  $ git reset--hard [commit]
+  $ git reset --hard [commit]
 
-  # ï¿½ï¿½ï¿½Ãµï¿½Ç°HEADÎªÖ¸ï¿½ï¿½commitï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½ï¿½Í¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  # ÖØÖÃµ±Ç°HEADÎªÖ¸¶¨commit£¬µ«±£³ÖÔÝ´æÇøºÍ¹¤×÷Çø²»±ä
 
-  $ git reset--keep [commit]
+  $ git reset --keep [commit]
 
-  # ï¿½Â½ï¿½Ò»ï¿½ï¿½commitï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½commit
+  # ÐÂ½¨Ò»¸öcommit£¬ÓÃÀ´³·ÏúÖ¸¶¨commit
 
-  # ï¿½ï¿½ï¿½ßµï¿½ï¿½ï¿½ï¿½Ð±ä»¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ßµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½Ãµï¿½ï¿½ï¿½Ç°ï¿½ï¿½Ö§
+  # ºóÕßµÄËùÓÐ±ä»¯¶¼½«±»Ç°ÕßµÖÏû£¬²¢ÇÒÓ¦ÓÃµ½µ±Ç°·ÖÖ§
 
   $ git revert[commit]
 
-  # ï¿½ï¿½Ê±ï¿½ï¿½Î´ï¿½á½»ï¿½Ä±ä»¯ï¿½Æ³ï¿½ï¿½ï¿½ï¿½Ôºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  # ÔÝÊ±½«Î´Ìá½»µÄ±ä»¯ÒÆ³ý£¬ÉÔºóÔÙÒÆÈë
 
   $ git stash
 
   $ git stash pop
 
-Ê®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+Ê®¡¢ÆäËû
 
-  # ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½ï¿½
+  # Éú³ÉÒ»¸ö¿É¹©·¢²¼µÄÑ¹Ëõ°ü
 
   $ git archive

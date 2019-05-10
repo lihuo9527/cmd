@@ -1,0 +1,45 @@
+﻿虚拟机无法上网->开启桥接模式-> 
+cd /etc/sysconfig/network-scripts/
+当前目录下查找  ifcfg-enp0s3
+然后编辑 vi ifcfg-enp0s3
+主要修改两项：
+BOOTPROTO=dhcp
+ONBOOT=yes
+保存退出。
+重启网络服务 service network restart
+
+
+
+初始化数据库密码设置 
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('shaB9527');
+
+设置数据库访问权限   
+grant all privileges on *.* to 'root'@'%' identified by 'root'; 
+执行 flush privileges;命令立即生效
+
+查看防火墙 
+firewall-cmd --state
+
+# 开启
+service firewalld start
+
+# 重启
+service firewalld restart
+
+# 关闭
+service firewalld stop
+
+查看防火墙规则
+firewall-cmd --list-all 
+
+# 查询端口是否开放
+firewall-cmd --query-port=8080/tcp
+
+# 开放80端口
+firewall-cmd --permanent --add-port=80/tcp
+
+# 移除端口
+firewall-cmd --permanent --remove-port=8080/tcp
+
+#重启防火墙(修改配置后要重启防火墙)
+firewall-cmd --reload

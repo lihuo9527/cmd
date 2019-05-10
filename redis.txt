@@ -1,0 +1,23 @@
+﻿1、下载redis 地址 http://download.redis.io/releases/redis-5.0.2.tar.gz
+
+2、解压tar -zxf redis-5.0.2.tar.gz
+
+3、yum install gcc
+
+4、cd redis-5.0.2
+
+5、make MALLOC=libc
+
+6、运行redis src/redis-server 
+
+修改配置文件 redis.conf
+
+daemonize no 改为 yes 后台运行：
+
+protected-mode yes 改为no 可以不用输入密码登陆
+
+bind 127.0.0.1  表示只可以本机访问，要是远程访问需要注释掉（前面加#号）
+
+src/redis-server redis.conf  带配置文件后台启动
+
+ps -ef | grep redis

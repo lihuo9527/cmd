@@ -1,0 +1,243 @@
+﻿安装步骤
+你可以选择本地下载node.js，然后上传到服务器，也可以通过wget直接在服务器端下载。
+
+wget命令下载Node.js安装包
+wget http://cdn.npm.taobao.org/dist/node/v8.9.0/node-v8.9.0-linux-x64.tar.xz
+对应版本的下载，你可以去 http://nodejs.cn/download/
+
+该安装包是编译好的文件，解压之后，在bin文件夹中就已存在node和npm，无需重复编译。且默认下载到/root目录下。
+
+ 
+解压文件
+切换到root目录，查看是否已有node-v8.9.0-linux-x64.tar.xz文件
+
+cd root/  
+
+ls -la
+当文件存在时，直接解压
+
+tar xvf node-v8.9.0-linux-x64.tar.xz
+此时再次查看，你会发现多了一个没有后缀的文件node-v8.9.0-linux-x64
+
+ 
+
+创建软链接
+通过创建软链接的方法，使得在任意目录下都可以直接使用node和npm命令：
+
+ln -s /root/node-v8.9.0-linux-x64/bin/node /usr/local/bin/node
+
+ln -s /root/node-v8.9.0-linux-x64/bin/npm /usr/local/bin/npm
+注意后面的路径是 /usr/local/bin/node（或npm），路径不要写错
+
+ 
+检查
+此时在任意目录下输入：
+
+node -v
+npm -v
+都可以查看版本号了，此时node.js已部署成功。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nodejs高大上的部署方式-PM2
+　
+
+如果直接通过node app来启动，如果报错了可能直接停在整个运行，supervisor感觉只是拿来用作开发环境的。再网上找到pm2.目前似乎最常见的线上部署nodejs项目的有forever,pm2这两种。
+使用场合:
+
+supervisor是开发环境用。
+forever管理多个站点，每个站点访问量不大，不需要监控。
+nodemon 是开发环境使用，修改自动重启。
+pm2 网站访问量比较大,需要完整的监控界面。
+
+PM2的主要特性:
+内建负载均衡（使用Node cluster 集群模块）
+后台运行
+0秒停机重载，我理解大概意思是维护升级的时候不需要停机.
+具有Ubuntu和CentOS 的启动脚本
+停止不稳定的进程（避免无限循环）
+控制台检测
+提供 HTTP API
+远程控制和实时的接口API ( Nodejs 模块,允许和PM2进程管理器交互 )
+ 
+
+　　1、最常用的属nohup了，其实就是在后台执行进程，末尾加个&
+
+[zhoujie@ops-dev ~]$ nohup node /home/zhoujie/ops/app.js &
+[1] 31490nohup: ignoring input and appending output to `nohup.out'
+即此时程序已启动，直接访问即可，原程序的的标准输出被自动改向到当前目录下的nohup.out文件，起到了log的作用。该命令可以在你退出帐户/关闭终端之后继续运行相应的进程。nohup就是不挂起的意思( no hang up)。
+
+该命令的一般形式为：nohup command &
+
+　　这个不太靠谱的样子，经常默默的进程在后台就挂了
+
+ 
+
+　　2、用screen另开一个屏幕，这种方式可以直接在屏幕上看到程序运行情况
+
+给该应用程序开个screen，如：screen -r ops ，用npm start启动，
+
+退出该后台：ctrl + a，再按d，可不能直接ctrl +c，否则就退出了
+
+这种方式很不专业，呵呵，不过方便看在生产环境的操作。
+
+这个本质上用的forever，package.json里配置的：
+
+  "scripts": {
+    "start": "forever app.js",
+    "test": "supervisor app.js"
+  },
+ 
+
+　　3、PM2
+
+使用它要先安装它，用root账号和全局模式安装一下：
+
+npm install -g pm2
+用它来启动程序（在当前目录下可以直接启动，pm2 start app.js --name uops）
+
+复制代码
+[zhoujie@ops-dev uops]$ pm2 start app.js 
+[PM2] Spawning PM2 daemon
+[PM2] Success
+[PM2] Process app.js launched
+┌──────────┬────┬──────┬─────┬────────┬───────────┬────────┬─────────────┬──────────┐
+│ App name │ id │ mode │ PID │ status │ restarted │ uptime │      memory │ watching │
+├──────────┼────┼──────┼─────┼────────┼───────────┼────────┼─────────────┼──────────┤
+│ app      │ 0  │ fork │ 308 │ online │         0 │ 0s     │ 21.879 MB   │ disabled │
+└──────────┴────┴──────┴─────┴────────┴───────────┴────────┴─────────────┴──────────┘
+ Use `pm2 info <id|name>` to get more details about an app
+[zhoujie@ops-dev uops]$
+复制代码
+看，它显示了Success，程序已经默默的成功的启动了，可以实时监控程序的运行，比如执行个pm2 restart，则上述restarted那栏变成1，可以显示程序运行了多长时间、占用内存大小，实在是太赞啦！
+
+
+
+终止程序也很简单：pm2 stop 
+
+
+
+列举出所有用pm2启动的程序：pm2 list
+
+复制代码
+[zhoujie@ops-dev uops]$ pm2 list
+┌──────────┬────┬──────┬─────┬────────┬───────────┬────────┬─────────────┬──────────┐
+│ App name │ id │ mode │ PID │ status │ restarted │ uptime │      memory │ watching │
+├──────────┼────┼──────┼─────┼────────┼───────────┼────────┼─────────────┼──────────┤
+│ app      │ 0  │ fork │ 984 │ online │         1 │ 3s     │ 64.141 MB   │ disabled │
+└──────────┴────┴──────┴─────┴────────┴───────────┴────────┴─────────────┴──────────┘
+ Use `pm2 info <id|name>` to get more details about an app
+复制代码
+查看启动程序的详细信息：pm2 describe id
+
+复制代码
+[zhoujie@ops-dev uops]$ pm2 desc 0
+Describing process with pid 0 - name app
+┌───────────────────┬─────────────────────────────────────────┐
+│ status            │ online                                  │
+│ name              │ app                                     │
+│ id                │ 0                                       │
+│ path              │ /home/zhoujie/uops/app.js               │
+│ args              │                                         │
+│ exec cwd          │ /home/zhoujie/uops                      │
+│ error log path    │ /home/zhoujie/.pm2/logs/app-error-0.log │
+│ out log path      │ /home/zhoujie/.pm2/logs/app-out-0.log   │
+│ pid path          │ /home/zhoujie/.pm2/pids/app-0.pid       │
+│ mode              │ fork_mode                               │
+│ node v8 arguments │                                         │
+│ watch & reload    │ ?                                       │
+│ interpreter       │ node                                    │
+│ restarts          │ 1                                       │
+│ unstable restarts │ 0                                       │
+│ uptime            │ 93s                                     │
+│ created at        │ 2015-01-07T09:41:25.672Z                │
+└───────────────────┴─────────────────────────────────────────┘
+[zhoujie@ops-dev uops]$ 
+复制代码
+通过pm2 list命令来观察所有运行的进程以及它们的状态已经足够好了.但是怎么来追踪它们的资源消耗呢?别担心,用这个命令:pm2 monit
+
+可以得到进程(以及集群)的CPU的使用率和内存占用(ctrl +c 退出)
+
+
+
+实时集中log处理：pm2 logs
+
+
+
+ 
+
+强大API： pm2 web
+
+你想要监控所有被PM2管理的进程,而且同时还想监控运行这些进程的机器的状态，
+
+复制代码
+[zhoujie@ops-dev uops]$ pm2 web
+Launching web interface on port 9615
+[PM2] Process /usr/local/node/lib/node_modules/pm2/lib/HttpInterface.js launched
+[PM2] Process launched
+┌────────────────────┬────┬──────┬──────┬────────┬───────────┬────────┬─────────────┬──────────┐
+│ App name           │ id │ mode │ PID  │ status │ restarted │ uptime │      memory │ watching │
+├────────────────────┼────┼──────┼──────┼────────┼───────────┼────────┼─────────────┼──────────┤
+│ app                │ 0  │ fork │ 984  │ online │         1 │ 9m     │ 74.762 MB   │ disabled │
+│ pm2-http-interface │ 1  │ fork │ 1878 │ online │         0 │ 0s     │ 15.070 MB   │ disabled │
+└────────────────────┴────┴──────┴──────┴────────┴───────────┴────────┴─────────────┴──────────┘
+ Use `pm2 info <id|name>` to get more details about an app
+复制代码
+启动程序的时候顺便在浏览器访问：http://localhost:9615
+
+擦，我眼睛被亮瞎了，这么炫酷，竟然把部署的服务器的信息和程序的信息都显示出来了：
+
+
+
+这东西对程序运行的监控页面的开发实在是太有帮助了，呵呵~~
+
+ 
+
+监控：pm2 monit
+实时集中log处理: pm2 logs
+API:pm2 web (端口：9615 )
+
+
+# 查看物理CPU个数
+  cat /proc/cpuinfo| grep "physical id" | sort| uniq | wc -l
+
+  
+# 查看每个物理CPU中core的个数(即核数)
+  cat /proc/cpuinfo| grep "cpu cores"| uniq
+
+  
+# 查看逻辑CPU的个数
+  cat /proc/cpuinfo| grep "processor"| wc -l
+
+
+
+pm2 stop     <app_name|id|'all'|json_conf>
+pm2 restart  <app_name|id|'all'|json_conf>
+pm2 delete   <app_name|id|'all'|json_conf>
+
+
+pm2 describe <id|app_name>
+pm2 monit
+ln -s /root/node-v8.9.0-linux-x64/lib/node_modules/pm2/bin/pm2 /usr/local/bin  解决软连接
+
+
+快速恢复
+现在事情一切顺利,你的进程嗡嗡的运行着,你需要做一次硬重启(hard restart).现在吗?是的,首先,dump掉:
+
+$ pm2 dump
+然后,你可以从文件中恢复它:
+
+$ pm2 kill // 让我们假设一个PM2停掉了 
+$ pm2 resurect // 我所有的进程又满血满状态复活了 
+

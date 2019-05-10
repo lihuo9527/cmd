@@ -1,0 +1,35 @@
+﻿
+npm install -g cnpm --registry=https://registry.npm.taobao.org     װcnpm
+
+cnpm install -g @angular/cli 
+
+npm install ~~
+
+ng new demo3   
+
+ng serve   
+
+
+
+ng serve -p 3000  
+
+ng g service 
+
+ng g component my-new-component   
+
+ng g directive my-new-directive  
+
+ng g pipe my-new-pipe   
+
+ng g service my-new-service   
+
+ng g class my-new-class   
+
+ng g interface my-new-interface  
+
+ng g enum my-new-enum   
+
+ng build --prod 
+
+
+
